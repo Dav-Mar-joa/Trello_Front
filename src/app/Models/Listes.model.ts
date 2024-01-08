@@ -1,5 +1,5 @@
 import { Carte } from "./Cartes.model";
-import { Projet } from "./Projects.model";
+import { Projet } from "./Projets.model";
 
 export interface Liste {
     id: number;

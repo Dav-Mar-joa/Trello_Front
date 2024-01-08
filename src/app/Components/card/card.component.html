@@ -1,0 +1,6 @@
+<p>{{ card.titre }}</p>
+<button (click)="deleteCard(card)">❌</button>
+<div class="CommentContainer" *ngFor="let comment of card.commentaires">
+    <app-comment [comment]="comment"></app-comment>
+    <!-- <button (click)="ajoutCard()">➕</button> -->
+  </div>

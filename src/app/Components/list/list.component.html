@@ -1,0 +1,5 @@
+<h1>{{ liste.nom }}</h1>
+<div class="CardContainer" *ngFor="let carte of liste.cartes">
+  <app-card [card]="carte"></app-card>
+  <button (click)="ajoutCard()">➕</button>
+</div>

@@ -1,4 +1,7 @@
-<h1>Information d'un projet</h1>
-<p>nom du project :{{ currentProject.nom }}</p>
-<p>Description :{{ currentProject.description }}</p>
-<p>id :{{ currentProject.id }}</p>
+<!-- <h1>Information d'un projet</h1> -->
+<p>{{ currentProject.description }}</p>
+<div class="Container" *ngFor="let liste of currentProject.listes"
+        id="project"
+      >
+<app-list [liste]="liste"></app-list>
+      </div>
