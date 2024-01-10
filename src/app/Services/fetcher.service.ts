@@ -11,7 +11,34 @@ import { Commentaire } from '../Models/Commentaires.model';
 })
 export class FetcherService {
 
+  projetsPopulated : Projet[] = [];
+
+  currentProject : Projet =
+  {
+      id: 1,
+      nom: "Projet 1",
+      description: "Description du projet 1",
+      dateCreation: null,
+      listes: []
+    }
+
+
   private baseUrl = 'http://localhost:5241';  // Assurez-vous de remplacer cela par la base URL correcte
+  //private baseUrl = 'https://trelloback.azurewebsites.net';
+
+  refresh()
+  {
+    this.getAll().subscribe((projects)=>{
+      this.projetsPopulated = projects
+      let project = this.projetsPopulated.find((project)=>project.id == this.currentProject.id)
+      if (project)
+      {
+        this.currentProject = project
+      }
+    });
+
+
+  }
 
   constructor(private http : HttpClient) { }
 

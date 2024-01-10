@@ -1,16 +1,15 @@
 <div class="container">
-    <div id="container">
-      <p
-        *ngFor="let project of projetsPopulated"
-        (click)="onClick(project)"
-        id="project"
-      >
-        {{ project.nom }}
-      </p>
-    </div>
-    <div id="containerAffichage">
-      <app-project [currentProject]="currentProject"></app-project>
-    </div>
+  <div id="container">
+    <p
+      *ngFor="let project of this.fetcher.projetsPopulated"
+      (click)="onClick(project)"
+      id="project"
+    >
+      {{ project.nom }}
+    </p>
   </div>
-  <!-- <button (click)="refresh()">fetch</button> -->
-  
+  <div id="containerAffichage">
+    <app-project [currentProject]="this.fetcher.currentProject"></app-project>
+  </div>
+</div>
+

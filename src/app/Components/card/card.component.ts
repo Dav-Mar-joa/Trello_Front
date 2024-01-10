@@ -20,6 +20,11 @@ export class CardComponent {
   deleteCard(carte:Carte)
   {
    console.log("delete card : "+carte)
-    this.fetcher.deleteCard(carte).subscribe((info)=>console.log(info));
+    this.fetcher.deleteCard(carte).subscribe(
+      (info)=>{
+        console.log(info)
+        this.fetcher.refresh();
+      });
+    //this.card;
   }
 }

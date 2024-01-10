@@ -13,37 +13,28 @@ import { FetcherService } from '../../Services/fetcher.service';
 })
 export class ProjectListComponent {
 
-  constructor(private fetcher : FetcherService)
+  constructor(public fetcher : FetcherService)
   {
-    this.fetcher.getAll().subscribe((projects)=> this.projetsPopulated = projects);
-
+    this.fetcher.refresh()
   }
 
-  projetsPopulated : Projet[] = [];
 
-  currentProject : Projet =
-  {
-      id: 1,
-      nom: "Projet 1",
-      description: "Description du projet 1",
-      dateCreation: null,
-      listes: []
-    }
+ 
 
-  refresh()
-  {
-    this.fetcher.getAll().subscribe((projects)=>{
-      console.log(projects);
-      console.log(this.projetsPopulated);
-      this.projetsPopulated = projects;
-      console.log(projects);
-      console.log(this.projetsPopulated);
-    }); 
-  }
+  // refresh()
+  // {
+  //   this.fetcher.getAll().subscribe((projects)=>{
+  //     console.log(projects);
+  //     console.log(this.fetcher.projetsPopulated);
+  //     this.fetcher.projetsPopulated = projects;
+  //     console.log(projects);
+  //     console.log(this.fetcher.projetsPopulated);
+  //   }); 
+  // }
 
   onClick( project : Projet)
   {
-    this.currentProject = project;
+    this.fetcher.currentProject = project;
 
     // recuperer les listes pour venir les ajouter dans le model
 
