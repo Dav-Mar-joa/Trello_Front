@@ -33,7 +33,7 @@ export class ListComponent {
         idListeNavigation : null,
     };
 
-      this.fetcher.postCard(carte).subscribe((info)=>console.log(info));
+      this.fetcher.postCard(carte)
    }
 
 }
