@@ -1,5 +1,5 @@
 <div *ngIf="!modificationState">
-  <h1>{{ liste.nom }}</h1>
+  <h1 (dblclick)="modifie()">{{ liste.nom }}</h1>
 </div>
 <div *ngIf="modificationState">
 <input (keydown.enter)="modifie()"

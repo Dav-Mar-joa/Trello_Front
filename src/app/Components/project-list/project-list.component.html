@@ -1,8 +1,8 @@
 <div class="container">
   <div id="container">
     <div *ngFor="let project of this.fetcher.projetsPopulated" (click)="onClick(project)" id="project" >
-      <div *ngIf="!modificationState">
-        {{ project.nom }}
+      <div *ngIf="!modificationState" >
+        <p (dblclick)="modifie(project)">{{ project.nom }}</p>
       </div>
       <div *ngIf="modificationState && selectedProject && selectedProject.id === project.id">
         <!-- Utilisez [(ngModel)] pour lier la valeur de l'input à la propriété nom du projet -->

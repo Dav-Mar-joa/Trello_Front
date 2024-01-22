@@ -1,7 +1,7 @@
 <div class="fondCarte">
 <div *ngIf="!modificationState">
-  <p>{{ card.titre }}</p>
-  <p>{{ card.description }}</p>
+  <p (dblclick)="modifie()">{{ card.titre }}</p>
+  <p (dblclick)="modifie()">{{ card.description }}</p>
 </div>
 <div *ngIf="modificationState">
   <input (keydown.enter)="modifie()"

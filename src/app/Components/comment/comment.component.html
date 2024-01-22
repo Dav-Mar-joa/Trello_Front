@@ -1,6 +1,6 @@
 <div class="fondComment">
     <div *ngIf="!modificationState">
-        <p>{{comment.contenu}}</p>
+        <p (dblclick)="modifie()">{{comment.contenu}}</p>
     </div>
     <div *ngIf="modificationState">
     <input (keydown.enter)="modifie()"
