@@ -127,6 +127,6 @@ export class FetcherService {
 
   deleteComment(Comment : Commentaire)
   {
-    return this.http.delete(this.baseUrl+"/cartes/"+Comment.id);
+    return this.http.delete(this.baseUrl+"/commentaires/"+Comment.id);
   }
 }
