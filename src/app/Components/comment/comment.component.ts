@@ -10,8 +10,8 @@ import { FetcherService } from '../../Services/fetcher.service';
   styleUrl: './comment.component.css'
 })
 export class CommentComponent {
-@Input()
-comment!: Commentaire;
+@Input() comment!: Commentaire;
+modificationState: boolean = false
 
 constructor(private fetcher : FetcherService){}
 deleteComment(comment:Commentaire)
@@ -23,4 +23,18 @@ deleteComment(comment:Commentaire)
       this.fetcher.refresh();
     });
     //this.card;
-  }}
+  }
+
+  modifie() {
+    if (this.modificationState)
+    {
+      this.fetcher.updateComment(this.comment)
+      this.modificationState = false;
+    }
+    else
+    {
+      this.modificationState = true;
+    }
+  }
+
+}

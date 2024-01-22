@@ -1,18 +1,23 @@
 <div class="container">
   <div id="container">
-    <p
-      *ngFor="let project of this.fetcher.projetsPopulated"
-      (click)="onClick(project)"
-      id="project"
-    >
-      {{ project.nom }}
-    <button class="modif" (click)="deleteProject(project)">❌</button>
-    </p>
+    <div *ngFor="let project of this.fetcher.projetsPopulated" (click)="onClick(project)" id="project" >
+      <div *ngIf="!modificationState">
+        {{ project.nom }}
+      </div>
+      <div *ngIf="modificationState && selectedProject && selectedProject.id === project.id">
+        <!-- Utilisez [(ngModel)] pour lier la valeur de l'input à la propriété nom du projet -->
+        <input
+          type="text"
+          [(ngModel)]="selectedProject.nom"
+        /><br />  
+      </div>    
+      <button class="modif" (click)="deleteProject(project)">❌</button>
+      <button class="modif" (click)="modifie(project)">🖍</button>
+    </div>
+    <button (click)="ajoutProjet()">➕</button>
   </div>
   <div id="containerAffichage">
     <app-project [currentProject]="this.fetcher.currentProject"></app-project>
   </div>
 </div>
-<button (click)="ajoutProjet()">➕</button>
-
 

@@ -1,3 +1,4 @@
+<div class="fondCarte">
 <div *ngIf="!modificationState">
   <p>{{ card.titre }}</p>
   <p>{{ card.description }}</p>
@@ -18,4 +19,7 @@
 <button class="modif" (click)="modifie()">🖍</button>
 <div class="CommentContainer" *ngFor="let comment of card.commentaires">
   <app-comment [comment]="comment"></app-comment>
+</div>
+<br>
+<button class="ajout"(click)="ajoutComment()">➕</button>
 </div>

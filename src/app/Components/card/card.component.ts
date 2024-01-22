@@ -4,17 +4,17 @@ import { FetcherService } from '../../Services/fetcher.service';
 import { CommentComponent } from '../comment/comment.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Commentaire } from '../../Models/Commentaires.model';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [CommentComponent, CommonModule,FormsModule],
+  imports: [CommentComponent, CommonModule, FormsModule],
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
 })
 export class CardComponent {
-  @Input()
-  card! : Carte;
+  @Input() card! : Carte;
 
   modificationState: boolean = false
   
@@ -31,7 +31,7 @@ export class CardComponent {
       //this.card;
     }
 
-    modifie() {
+  modifie() {
       if (this.modificationState)
       {
         this.fetcher.updateCarte(this.card)
@@ -42,4 +42,17 @@ export class CardComponent {
         this.modificationState = true;
       }
     }
+
+  ajoutComment()
+   {
+      let commentaire : Commentaire = {
+        id : 0,
+        contenu : "Default",
+        dateCreation : null,
+        idCarte : this.card.id,
+        idCarteNavigation : null,
+    };
+
+    this.fetcher.postComment(commentaire)
+   }
 }

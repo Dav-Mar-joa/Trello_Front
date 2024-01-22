@@ -63,6 +63,13 @@ export class FetcherService {
       this.refresh()
     })
   }
+  updateProjet(projet : Projet)
+  {
+    console.log("updateProjet Projet")
+    return this.http.put(this.baseUrl+"/projets/" + projet.id, projet).subscribe((reponse)=>{
+      console.log(reponse)
+      this.refresh()
+    })  }
 
   deleteProjet(projet : Projet)
   {
@@ -82,7 +89,7 @@ export class FetcherService {
 
   updateCarte(carte : Carte)
   {
-    console.log("yolo")
+    console.log("updateCarte carte")
     return this.http.put(this.baseUrl+"/cartes/" + carte.id, carte).subscribe((reponse)=>{
       console.log(reponse)
       this.refresh()
@@ -94,6 +101,23 @@ export class FetcherService {
       console.log(reponse)
       this.refresh()
     })
+  }
+
+  postComment(comment : Commentaire)
+  {
+    return this.http.post(this.baseUrl+"/commentaires/", comment).subscribe((reponse)=>{
+      console.log(reponse)
+      this.refresh()
+    })
+  }
+
+  updateComment(comment : Commentaire)
+  {
+    console.log("updateCarte comment")
+    return this.http.put(this.baseUrl+"/comments/" + comment.id, comment).subscribe((reponse)=>{
+      console.log(reponse)
+      this.refresh()
+    })  
   }
 
   deleteCard(cart : Carte)

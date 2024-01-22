@@ -3,16 +3,21 @@ import { Projet } from '../../Models/Projets.model';
 import { CommonModule } from '@angular/common';
 import { ProjectComponent } from '../project/project.component';
 import { FetcherService } from '../../Services/fetcher.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-project-list',
   standalone: true,
-  imports: [CommonModule, ProjectComponent],
+  imports: [CommonModule, ProjectComponent,FormsModule],
   templateUrl: './project-list.component.html',
   styleUrl: './project-list.component.css'
 })
 export class ProjectListComponent {
 
+  project!:Projet;
+  modificationState: boolean = false
+  selectedProject!:Projet
+  
   constructor(public fetcher : FetcherService)
   {
     this.fetcher.refresh()
@@ -68,7 +73,19 @@ export class ProjectListComponent {
        });
        //this.card;
      }
- 
+
+    modifie(projet:Projet) {
+      if (this.modificationState)
+      {
+        this.fetcher.updateProjet(projet)  //(this.project)
+        this.modificationState = false;
+      }
+      else
+      {
+        this.modificationState = true;
+      }
+      this.selectedProject = projet;
+    }
 }
 
 // {
