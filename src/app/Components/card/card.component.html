@@ -1,4 +1,4 @@
-<div class="fondCarte">
+<div class="fondCarte rounded-element">
 <div *ngIf="!modificationState">
   <p (dblclick)="modifie()">{{ card.titre }}</p>
   <p (dblclick)="modifie()">{{ card.description }}</p>
@@ -21,5 +21,5 @@
   <app-comment [comment]="comment"></app-comment>
 </div>
 <br>
-<button class="ajout"(click)="ajoutComment()">➕</button>
+<button class="ajout"(click)="ajoutComment()">➕ Add Comment</button>
 </div>

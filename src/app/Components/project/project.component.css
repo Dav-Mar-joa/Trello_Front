@@ -11,8 +11,9 @@
 }
 
 .colonne_liste{
+    
     float: left;
-    width: 33.33%; 
+    width: 33.33%;  
     box-sizing: border-box;
     padding: 15px; 
 }
@@ -25,7 +26,7 @@
     padding-top: 10px;
     padding-bottom: 100px;
     background-color: rgb(49, 130, 192);
-    border: 3px solid #000000;
+    /* border: 3px solid #000000; */
 }
 
 .colonne_1_carte {
@@ -39,7 +40,7 @@
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: rgb(40, 46, 138);
-    border: 3px solid #000000;
+    /* border: 3px solid #000000; */
 }
 
 .colonne_1_carte:hover {
@@ -83,4 +84,8 @@
 
 .text_carte{
     color: aliceblue;
+}
+
+.ajoutList_centre {
+    text-align: center;
 }

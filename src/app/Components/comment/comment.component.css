@@ -1,3 +1,8 @@
 .fondComment {
     background-color: orange;
 }
+
+.rounded-element {
+    border: 10px;
+    border-radius: 10px;
+}

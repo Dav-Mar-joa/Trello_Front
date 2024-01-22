@@ -11,7 +11,8 @@
 
 <button class="modif" (click)="deleteList(liste)">❌</button>
 <button class="modif" (click)="modifie()">🖍</button>
+<br>
 <div class="CardContainer" *ngFor="let carte of liste.cartes">
   <app-card [card]="carte"></app-card>
 </div>
-<button (click)="ajoutCard()">➕</button>
+<button (click)="ajoutCard()">➕ Add Card</button>

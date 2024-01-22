@@ -1,8 +1,12 @@
 .modif{
-
+    
 }
 
 .fondCarte {
     background-color: orchid;
 }
 
+.rounded-element {
+    border: 10px;
+    border-radius: 10px;
+}

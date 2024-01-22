@@ -14,7 +14,8 @@
       <button class="modif" (click)="deleteProject(project)">❌</button>
       <button class="modif" (click)="modifie(project)">🖍</button>
     </div>
-    <button (click)="ajoutProjet()">➕</button>
+    <br>
+    <button (click)="ajoutProjet()">➕ Add Project</button>
   </div>
   <div id="containerAffichage">
     <app-project [currentProject]="this.fetcher.currentProject"></app-project>

@@ -1,13 +1,16 @@
-<h1 class="titre_centrer_haut">Information sur le projet : {{ currentProject.nom }}</h1>
+<h1 class="titre_centrer_haut">Projet informations : {{ currentProject.nom }}</h1>
 <p class="titre_centrer">Description : {{ currentProject.description }}</p>
 <div class="titre_centrer">
-    <div class="colonne_liste" *ngFor="let liste of currentProject.listes" id="project">
+    <div class="colonne_liste" *ngFor="let liste of currentProject.listes; let i = index" id="project">
         <div class ="colonne_1_liste">
-            <app-list [liste] ="liste"></app-list>
-
+            <ng-container *ngIf="i < 3">
+                <div class="colonne_1_liste">
+                    <app-list [liste]="liste"></app-list>
+                </div>
+            </ng-container>
         </div>
     </div>
-    <!-- <button class="modif" (click)="deleteCard(card)">❌</button>
-    <button class="modif" (click)="modifie()">🖍</button> -->
-    <button (click)="ajoutList()">➕</button>
+    <ng-container *ngIf="currentProject.listes.length < 3">
+      <button class="ajoutList_centre" (click)="ajoutList()">➕ Add List</button>
+    </ng-container>    
 </div>
