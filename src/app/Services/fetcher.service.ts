@@ -30,6 +30,7 @@ export class FetcherService {
   {
     this.getAll().subscribe((projects)=>{
       this.projetsPopulated = projects
+      console.log(projects)
       let project = this.projetsPopulated.find((project)=>project.id == this.currentProject.id)
       if (project)
       {
@@ -66,13 +67,29 @@ export class FetcherService {
     return this.http.get<Commentaire[]>(this.baseUrl+ cart.id);
   }
 
-  postCard(cart : Carte)
+  updateCarte(carte : Carte)
   {
-    return this.http.post(this.baseUrl+"/cartes/", cart);
+    console.log("yolo")
+    return this.http.put(this.baseUrl+"/cartes/" + carte.id, carte).subscribe((reponse)=>{
+      console.log(reponse)
+      this.refresh()
+    })  }
+
+  postCard(carte : Carte)
+  {
+    return this.http.post(this.baseUrl+"/cartes/", carte).subscribe((reponse)=>{
+      console.log(reponse)
+      this.refresh()
+    })
   }
 
   deleteCard(cart : Carte)
   {
     return this.http.delete(this.baseUrl+"/cartes/"+cart.id);
+  }
+
+  deleteComment(Comment : Commentaire)
+  {
+    return this.http.delete(this.baseUrl+"/cartes/"+Comment.id);
   }
 }
