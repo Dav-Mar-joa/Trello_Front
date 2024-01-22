@@ -55,6 +55,19 @@ export class FetcherService {
   {
     return this.http.get<Liste[]>(this.baseUrl+"/listes/" + project.id);
   }
+  
+  postProjet(projet : Projet)
+  {
+    return this.http.post(this.baseUrl+"/projets/", projet).subscribe((reponse)=>{
+      console.log(reponse)
+      this.refresh()
+    })
+  }
+
+  deleteProjet(projet : Projet)
+  {
+    return this.http.delete(this.baseUrl+"/projets/"+projet.id);
+  }
 
   getCardbyList(list:Liste)
   {

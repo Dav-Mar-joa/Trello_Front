@@ -45,6 +45,30 @@ export class ProjectListComponent {
     //   (cards)=>liste.cartes = cards
     // ))
   }
+  ajoutProjet()
+   {
+      let projet : Projet = {
+        id : 0,
+        nom: "Default",
+        description: "Default",
+        dateCreation: null,
+        listes: []
+    };
+
+      this.fetcher.postProjet(projet)
+   }
+
+   deleteProject(projet:Projet)
+   {
+     console.log("delete projet : "+projet)
+     this.fetcher.deleteProjet(projet).subscribe(
+       (info)=>{
+         console.log(info)
+         this.fetcher.refresh();
+       });
+       //this.card;
+     }
+ 
 }
 
 // {

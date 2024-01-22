@@ -6,10 +6,13 @@
       id="project"
     >
       {{ project.nom }}
+    <button class="modif" (click)="deleteProject(project)">❌</button>
     </p>
   </div>
   <div id="containerAffichage">
     <app-project [currentProject]="this.fetcher.currentProject"></app-project>
   </div>
 </div>
+<button (click)="ajoutProjet()">➕</button>
+
 
