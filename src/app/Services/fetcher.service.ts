@@ -129,4 +129,27 @@ export class FetcherService {
   {
     return this.http.delete(this.baseUrl+"/commentaires/"+Comment.id);
   }
+
+  
+  postList(liste : Liste)
+  {
+    return this.http.post(this.baseUrl+"/listes/", liste).subscribe((reponse)=>{
+      console.log(reponse)
+      this.refresh()
+    })
+  }
+
+  updateList(liste : Liste)
+  {
+    console.log("updateCarte comment")
+    return this.http.put(this.baseUrl+"/listes/" + liste.id, liste).subscribe((reponse)=>{
+      console.log(reponse)
+      this.refresh()
+    })  
+  }
+
+  deleteList(liste : Liste)
+  {
+    return this.http.delete(this.baseUrl+"/listes/"+liste.id);
+  }
 }

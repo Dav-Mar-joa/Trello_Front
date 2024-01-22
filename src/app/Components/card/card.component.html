@@ -4,12 +4,12 @@
   <p>{{ card.description }}</p>
 </div>
 <div *ngIf="modificationState">
-  <input
+  <input (keydown.enter)="modifie()"
     type="text"
     value="{{ card.titre }}"
     [(ngModel)]="this.card.titre"
   /><br />
-  <input
+  <input (keydown.enter)="modifie()"
     type="text"
     value="{{ card.description }}"
     [(ngModel)]="this.card.description"

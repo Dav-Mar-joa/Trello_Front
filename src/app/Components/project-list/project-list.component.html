@@ -6,7 +6,7 @@
       </div>
       <div *ngIf="modificationState && selectedProject && selectedProject.id === project.id">
         <!-- Utilisez [(ngModel)] pour lier la valeur de l'input à la propriété nom du projet -->
-        <input
+        <input (keydown.enter)="modifie(project)"
           type="text"
           [(ngModel)]="selectedProject.nom"
         /><br />  

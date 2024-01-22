@@ -1,11 +1,13 @@
 import { Component, Input } from '@angular/core';
 import { Commentaire } from '../../Models/Commentaires.model';
 import { FetcherService } from '../../Services/fetcher.service';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-comment',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, FormsModule],
   templateUrl: './comment.component.html',
   styleUrl: './comment.component.css'
 })

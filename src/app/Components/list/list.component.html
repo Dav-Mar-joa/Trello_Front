@@ -1,4 +1,16 @@
-<h1>{{ liste.nom }}</h1>
+<div *ngIf="!modificationState">
+  <h1>{{ liste.nom }}</h1>
+</div>
+<div *ngIf="modificationState">
+<input (keydown.enter)="modifie()"
+  type="text"
+  value="{{liste.nom}}"
+  [(ngModel)]="this.liste.nom"
+/><br />
+</div>
+
+<button class="modif" (click)="deleteList(liste)">❌</button>
+<button class="modif" (click)="modifie()">🖍</button>
 <div class="CardContainer" *ngFor="let carte of liste.cartes">
   <app-card [card]="carte"></app-card>
 </div>

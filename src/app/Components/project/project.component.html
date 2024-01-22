@@ -1,10 +1,13 @@
 <h1 class="titre_centrer_haut">Information sur le projet : {{ currentProject.nom }}</h1>
 <p class="titre_centrer">Description : {{ currentProject.description }}</p>
 <div class="titre_centrer">
-        <div class="colonne_liste" *ngFor="let liste of currentProject.listes" id="project">
-            <div class ="colonne_1_liste">
-                <app-list [liste] ="liste"></app-list>
+    <div class="colonne_liste" *ngFor="let liste of currentProject.listes" id="project">
+        <div class ="colonne_1_liste">
+            <app-list [liste] ="liste"></app-list>
 
-            </div>
         </div>
+    </div>
+    <!-- <button class="modif" (click)="deleteCard(card)">❌</button>
+    <button class="modif" (click)="modifie()">🖍</button> -->
+    <button (click)="ajoutList()">➕</button>
 </div>
