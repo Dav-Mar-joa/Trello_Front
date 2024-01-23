@@ -113,8 +113,8 @@ export class FetcherService {
 
   updateComment(comment : Commentaire)
   {
-    console.log("updateCarte comment")
-    return this.http.put(this.baseUrl+"/comments/" + comment.id, comment).subscribe((reponse)=>{
+    console.log("updateCarte commentaires")
+    return this.http.put(this.baseUrl+"/commentaires/" + comment.id, comment).subscribe((reponse)=>{
       console.log(reponse)
       this.refresh()
     })  
