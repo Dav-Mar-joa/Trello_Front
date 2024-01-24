@@ -23,8 +23,8 @@ export class FetcherService {
     }
 
 
-  private baseUrl = 'http://localhost:5241';  // Assurez-vous de remplacer cela par la base URL correcte
-  //private baseUrl = 'https://trelloback.azurewebsites.net';
+  //private baseUrl = 'http://localhost:5241';  // Assurez-vous de remplacer cela par la base URL correcte
+  private baseUrl = 'https://trellobackdavid.azurewebsites.net';
 
   refresh()
   {
