@@ -1,25 +1,79 @@
-<div class="fondCarte rounded-element">
-<div *ngIf="!modificationState">
-  <p (dblclick)="modifie()">{{ card.titre }}</p>
-  <p (dblclick)="modifie()">{{ card.description }}</p>
-</div>
-<div *ngIf="modificationState">
-  <input (keydown.enter)="modifie()"
-    type="text"
-    value="{{ card.titre }}"
-    [(ngModel)]="this.card.titre"
-  /><br />
-  <input (keydown.enter)="modifie()"
-    type="text"
-    value="{{ card.description }}"
-    [(ngModel)]="this.card.description"
-  /><br />
-</div>
-<button class="modif" (click)="deleteCard(card)">❌</button>
-<button class="modif" (click)="modifie()">🖍</button>
-<div class="CommentContainer" *ngFor="let comment of card.commentaires">
-  <app-comment [comment]="comment"></app-comment>
-</div>
-<br>
-<button class="ajout"(click)="ajoutComment()">➕ Add Comment</button>
+<div class="card m-2">
+  <div class="card-body">
+    <div class="card-title" style="text-align: center">
+      <div class="row" style="text-align: center">
+        <div class="col-3"></div>
+        <div
+          class="col-6 titre-card"
+          (dblclick)="modifie()"
+          *ngIf="!modificationState"
+        >
+          {{ card.titre }}
+        </div>
+        <input
+          *ngIf="modificationState"
+          (keydown.enter)="modifie()"
+          type="text"
+          value="{{ card.titre }}"
+          [(ngModel)]="this.card.titre"
+        />
+        <div class="col-3" (click)="deleteCard(card)">
+          <div class="btn btn-danger btn-sm tiny">
+            <i class="fa-solid fa-trash"></i>
+          </div>
+        </div>
+      </div>
+      <div class="card-text">
+        <div class="row">
+          <div class="col" *ngIf="!modificationState" (dblclick)="modifie()">
+            {{ card.description }}
+          </div>
+          <input
+            *ngIf="modificationState"
+            class="col"
+            (keydown.enter)="modifie()"
+            type="text"
+            value="{{ card.description }}"
+            [(ngModel)]="this.card.description"
+          />
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <div class="card-title">
+                  <div class="row" style="text-align: center">
+                    <div class="col-1"></div>
+                    <div class="col-10">Commentaires</div>
+                    <div class="col-1"></div>
+                  </div>
+                </div>
+                <div class="card-text">
+                  <div
+                    class="border-comment"
+                    *ngFor="let comment of card.commentaires"
+                  >
+                    <app-comment class="row" [comment]="comment"></app-comment>
+                  </div>
+                  <br />
+                  <div class="row" style="text-align: center">
+                    <div class="col">
+                      <div
+                        (click)="ajoutComment()"
+                        class="btn btn-success comment"
+                      >
+                        <i class="fa-solid fa-plus"></i>
+                        Commentaire
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

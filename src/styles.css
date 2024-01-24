@@ -1,1 +1,92 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  padding: 0px;
+  margin: 0px;
+  background-color: #1d2167;
+
+  background: rgb(29, 33, 103);
+  background: linear-gradient(
+    90deg,
+    rgba(29, 33, 103, 1) 0%,
+    rgba(152, 40, 183, 0.8744747899159664) 100%
+  );
+}
+
+.navbar {
+  background-color: #1d2167;
+}
+
+div {
+  color: aliceblue;
+}
+
+.white-txt {
+  color: aliceblue;
+}
+
+.card div:not(.btn-danger, .btn-success) {
+  color: black;
+}
+
+.tiny {
+  font-size: xx-small;
+}
+
+.grey-bg {
+  background-color: rgba(0, 0, 0, 0.193);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 6px;
+}
+
+.titre-project {
+  font-weight: bold;
+
+  font-size: 50px;
+}
+.description-projet {
+  color: grey;
+}
+
+.card-body {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.182);
+  background-color: rgb(242, 243, 245);
+  border-radius: inherit;
+}
+.card-body .card-body {
+  background-color: rgb(208, 212, 219);
+}
+
+.btn-danger {
+  font-size: xx-small;
+}
+.projet-bar-titre {
+  font-size: 18px;
+  font-weight: 600;
+}
+.titre-list {
+  font-size: 25px;
+  font-weight: 600;
+}
+.comment {
+  font-size: 10px;
+}
+.comment-sup {
+  font-size: 7px;
+}
+
+.border-comment {
+  border-top-style: solid;
+  border-color: rgba(128, 128, 128, 0.614);
+  border-width: 2px;
+}
+.card-body .card-body .card-text {
+  border-style: solid;
+  border-color: rgba(128, 128, 128, 0.433);
+  border-radius: 5px;
+}
+
+.titre-card {
+  font-size: 20px;
+  font-weight: 600;
+}

@@ -1,91 +1,94 @@
-.titre_centrer{
-    text-align: center;
+.titre_centrer {
+  text-align: center;
+  font-size: 50px;
 }
-.titre_centrer_haut{
-    text-align: center;
-    font-weight: bold;
-    color: rgb(0, 0, 0); /* Couleur du texte en blanc /
+.titre_centrer_haut {
+  text-align: center;
+  font-weight: bold;
+  color: rgb(
+    0,
+    0,
+    0
+  ); /* Couleur du texte en blanc /
     background-color: rgb(82, 150, 202); / Couleur de fond */
-    padding: 5px 10px;
-
+  padding: 5px 10px;
 }
 
-.colonne_liste{
-    
-    float: left;
-    width: 33.33%;  
-    box-sizing: border-box;
-    padding: 15px; 
+.colonne_liste {
+  float: left;
+  width: 33.33%;
+  box-sizing: border-box;
+  padding: 15px;
 }
 
-.colonne_1_liste{
-    font-size: 20px;
-    text-align: center;
-    padding-left: 20px;
-    padding-right: 50px;
-    padding-top: 10px;
-    padding-bottom: 100px;
-    background-color: rgb(49, 130, 192);
-    /* border: 3px solid #000000; */
+.colonne_1_liste {
+  font-size: 20px;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 100px;
+  background-color: rgb(49, 130, 192);
+  /* border: 3px solid #000000; */
 }
 
 .colonne_1_carte {
-    color: aliceblue;
-    font-size: 17px;
-    text-align: center;
-    position: relative; 
-    margin-top: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: rgb(40, 46, 138);
-    /* border: 3px solid #000000; */
+  color: aliceblue;
+  font-size: 17px;
+  text-align: center;
+  position: relative;
+  margin-top: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgb(40, 46, 138);
+  /* border: 3px solid #000000; */
 }
 
 .colonne_1_carte:hover {
-    color: rgb(0, 0, 0);
-    background-color: rgb(201, 206, 220);
-    font-size: 17px;
-    text-align: center;
-    position: relative; 
-    margin-top: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border: 3px solid #000000;
-    border-radius: 10px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(201, 206, 220);
+  font-size: 17px;
+  text-align: center;
+  position: relative;
+  margin-top: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 3px solid #000000;
+  border-radius: 10px;
 }
 
 .delete-button_carte {
-    color: rgb(255, 255, 255);
-    font-size: 22px;
-    position: absolute;
-    top: 50%;
-    right: 5px; 
-    transform: translateY(-50%);
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
+  color: rgb(255, 255, 255);
+  font-size: 22px;
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
 }
 
 .center-x_carte {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
-    height: 20px;
-    color: rgb(255, 255, 255);
-    background-color: rgb(27, 20, 59);
-    font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(27, 20, 59);
+  font-weight: bold;
 }
 
-.text_carte{
-    color: aliceblue;
+.text_carte {
+  color: aliceblue;
 }
 
 .ajoutList_centre {
-    text-align: center;
+  text-align: center;
 }

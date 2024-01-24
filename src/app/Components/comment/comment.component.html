@@ -1,15 +1,20 @@
-<div class="fondComment rounded-element">
-    <div *ngIf="!modificationState">
-        <p (dblclick)="modifie()">{{comment.contenu}}</p>
-    </div>
-    <div *ngIf="modificationState">
-    <input (keydown.enter)="modifie()"
-        type="text"
-        value="{{comment.contenu}}"
-        [(ngModel)]="this.comment.contenu"
-    /><br />
-    </div>
-<button class="modif" (click)="deleteComment(comment)">❌</button>
-<button class="modif" (click)="modifie()">🖍</button>
-
+<div (dblclick)="modifie()" class="col-9" *ngIf="!modificationState">
+  {{ comment.contenu }}
 </div>
+
+<div class="col-3" *ngIf="!modificationState">
+  <div
+    (click)="deleteComment(comment)"
+    class="btn btn-danger btn-sm tiny comment-sup"
+  >
+    <i class="fa-solid fa-trash"></i>
+  </div>
+</div>
+<input
+  class="col"
+  *ngIf="modificationState"
+  (keydown.enter)="modifie()"
+  type="text"
+  value="{{ comment.contenu }}"
+  [(ngModel)]="this.comment.contenu"
+/>

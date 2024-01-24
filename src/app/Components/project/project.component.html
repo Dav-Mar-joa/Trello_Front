@@ -1,16 +1,40 @@
-<h1 class="titre_centrer_haut">Projet informations : {{ currentProject.nom }}</h1>
-<p class="titre_centrer">Description : {{ currentProject.description }}</p>
-<div class="titre_centrer">
-    <div class="colonne_liste" *ngFor="let liste of currentProject.listes; let i = index" id="project">
-        <div class ="colonne_1_liste">
-            <ng-container *ngIf="i < 3">
-                <div class="colonne_1_liste">
-                    <app-list [liste]="liste"></app-list>
-                </div>
-            </ng-container>
+<div class="grey-bg">
+  <div class="row p-t-2" style="text-align: center">
+    <div class="col-3"></div>
+    <div class="col-6">
+      <div class="row">
+        <div class="col titre-project">
+          {{ currentProject.nom }}
         </div>
+      </div>
+      <div class="row">
+        <div class="col description-projet">
+          {{ currentProject.description }}
+        </div>
+      </div>
     </div>
-    <ng-container *ngIf="currentProject.listes.length < 3">
-      <button class="ajoutList_centre" (click)="ajoutList()">➕ Add List</button>
-    </ng-container>    
+    <div class="col-3">
+      <div
+        *ngIf="currentProject.listes.length < 3"
+        (click)="ajoutList()"
+        class="btn btn-success"
+      >
+        <i class="fa-solid fa-plus"></i> Liste
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div
+    class="col-4 col-lg-3"
+    *ngFor="let liste of currentProject.listes; let i = index"
+    id="project"
+  >
+    <div class="row">
+      <div class="col" *ngIf="i < 3">
+        <app-list [liste]="liste"></app-list>
+      </div>
+    </div>
+  </div>
 </div>
