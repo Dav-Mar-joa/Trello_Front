@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - trellofrontdavid
+name: Build and deploy Node.js app to Azure Web App - TrelloFrontJJ
 
 on:
   push:
@@ -19,15 +19,12 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '18.x'
 
-      - name: Install Angular CLI and dependencies
+      - name: npm install, build, and test
         run: |
-             npm install -g @angular/cli
-             npm install
-             npm install --save-dev @angular-devkit/build-angular
-             npm run build --if-present
-
+          npm install
+          npm run build --if-present
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
@@ -51,7 +48,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'trellofrontdavid'
+          app-name: 'TrelloFrontJJ'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6D8726F2AA81446C92694783758A013E }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BC0B0BD807F244C88927EA9C6EC33937 }}
           package: .
